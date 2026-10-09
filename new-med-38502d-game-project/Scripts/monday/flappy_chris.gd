@@ -1,6 +1,6 @@
 extends CharacterBody2D
 const MAX_DOWN = 90
-const MAX_UP = -85
+const MAX_UP = -90
 const SPEED = 75.0
 const JUMP_VELOCITY = -130.0
 var is_dead: bool = false
@@ -9,7 +9,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += (get_gravity()/1.75) * delta
 		velocity.x = SPEED 
-		rotation_degrees = clamp(velocity.y * 0.175, MAX_UP, MAX_DOWN)
+		rotation_degrees = clamp(velocity.y * 0.255, MAX_UP, MAX_DOWN)
 		if is_dead == false:
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
