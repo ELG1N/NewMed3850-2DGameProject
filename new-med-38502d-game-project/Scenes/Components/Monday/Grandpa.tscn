@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dt01vu7nr02i2"]
+
+[ext_resource type="Texture2D" uid="uid://67bl7n1qjx7u" path="res://Assets/Sprites/Monday/FlappyBirdObstacles.png" id="1_o0t6h"]
+[ext_resource type="Script" uid="uid://ba1tlmo7kcefx" path="res://Scripts/monday/grandpa.gd" id="1_yqusp"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqyn0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqyn0"]
+radius = 8.0
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nygc3"]
+radius = 6.0
+height = 28.0
+
+[node name="Grandpa" type="StaticBody2D" unique_id=307173947]
+physics_material_override = SubResource("PhysicsMaterial_lqyn0")
+script = ExtResource("1_yqusp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165175350]
+texture = ExtResource("1_o0t6h")
+region_enabled = true
+region_rect = Rect2(153, 45, 20, 41)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2002055219]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=275152733]
+position = Vector2(0, -2)
+shape = SubResource("CapsuleShape2D_lqyn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=15920672]
+shape = SubResource("CapsuleShape2D_nygc3")

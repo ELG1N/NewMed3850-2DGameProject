@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://b2opawmfbweus"]
+
+[ext_resource type="Texture2D" uid="uid://ck607yhm7qood" path="res://Assets/Sprites/Monday/FlappyChris.png" id="1_1rybq"]
+[ext_resource type="Script" uid="uid://c70bdh4nixup" path="res://Scripts/monday/flappy_chris.gd" id="1_20arr"]
+[ext_resource type="Texture2D" uid="uid://k3r3xc8bq6dk" path="res://Assets/Sprites/Monday/FlappyChrisFly.png" id="3_d3tgc"]
+[ext_resource type="Texture2D" uid="uid://bh85qkwl366bq" path="res://Assets/Sprites/Monday/DeadChris.png" id="4_747ac"]
+[ext_resource type="Texture2D" uid="uid://bkpy0crexo32k" path="res://Assets/Sprites/Monday/FlappyChris2.png" id="4_v5nqk"]
+[ext_resource type="AudioStream" uid="uid://dyixcibq5vy35" path="res://Assets/Sounds/Monday/SFX_Jump_24.wav" id="6_j5poa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lqyn0"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("3_d3tgc")
+}, {
+"duration": 0.2,
+"texture": ExtResource("1_1rybq")
+}],
+"loop": 0,
+"name": &"Fly",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 5.0,
+"texture": ExtResource("4_747ac")
+}],
+"loop": 1,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1rybq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_v5nqk")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqyn0"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nygc3"]
+radius = 5.0
+height = 24.0
+
+[node name="FlappyChris" type="CharacterBody2D" unique_id=111654309]
+script = ExtResource("1_20arr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752871328]
+unique_name_in_owner = true
+scale = Vector2(0.875, 1)
+sprite_frames = SubResource("SpriteFrames_lqyn0")
+animation = &"die"
+autoplay = "idle"
+frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=295474992]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=789587506]
+position = Vector2(11, -5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_lqyn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308897801]
+position = Vector2(2, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nygc3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1698308444]
+stream = ExtResource("6_j5poa")
+volume_db = -4.269
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
