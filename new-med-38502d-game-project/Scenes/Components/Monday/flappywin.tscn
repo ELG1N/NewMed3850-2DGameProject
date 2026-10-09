@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dbq3k6po4repu"]
+
+[ext_resource type="Script" uid="uid://bn0w8qao88yc6" path="res://Scripts/monday/flappywin.gd" id="1_qf3sy"]
+
+[node name="Flappywin" type="Node2D" unique_id=2082899087]
+script = ExtResource("1_qf3sy")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=145922278]
+
+[node name="play again" type="Button" parent="CanvasLayer" unique_id=418474601]
+offset_left = 52.0
+offset_top = 41.0
+offset_right = 139.0
+offset_bottom = 72.0
+text = "Play again"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1242860533]
+offset_left = 59.0
+offset_top = 8.0
+offset_right = 130.0
+offset_bottom = 31.0
+text = "You won!"
+
+[node name="Exit" type="Button" parent="CanvasLayer" unique_id=345124821]
+offset_left = 73.0
+offset_top = 87.0
+offset_right = 110.0
+offset_bottom = 118.0
+text = "exit"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1190488982]
+position = Vector2(94, 79)
+
+[connection signal="pressed" from="CanvasLayer/play again" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

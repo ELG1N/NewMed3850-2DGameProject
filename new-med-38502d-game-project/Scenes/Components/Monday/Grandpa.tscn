@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dt01vu7nr02i2"]
+
+[ext_resource type="Texture2D" uid="uid://67bl7n1qjx7u" path="res://Assets/Sprites/Monday/FlappyBirdObstacles.png" id="1_o0t6h"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqyn0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqyn0"]
+radius = 7.0
+height = 26.0
+
+[node name="Grandpa" type="StaticBody2D" unique_id=307173947]
+physics_material_override = SubResource("PhysicsMaterial_lqyn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165175350]
+texture = ExtResource("1_o0t6h")
+region_enabled = true
+region_rect = Rect2(153, 45, 20, 41)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2002055219]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=275152733]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_lqyn0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=47297010]
+position = Vector2(0, -6)
+shape = SubResource("CapsuleShape2D_lqyn0")

@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://32cmfpg14x0w"]
+
+[ext_resource type="Texture2D" uid="uid://bwqvd3uyrb4cs" path="res://Assets/Sprites/Monday/ItsRugGuys.png" id="1_d7y64"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_lqyn0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lc8yl"]
+size = Vector2(20, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lqyn0"]
+size = Vector2(57, 39)
+
+[node name="RugGuys" type="StaticBody2D" unique_id=1356484975]
+physics_material_override = SubResource("PhysicsMaterial_lqyn0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=273877760]
+position = Vector2(3.6279068, 6.25)
+scale = Vector2(1.1511627, 1.1511627)
+texture = ExtResource("1_d7y64")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 43)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=179080778]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=760334337]
+position = Vector2(3, 14)
+shape = SubResource("RectangleShape2D_lc8yl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=1762887071]
+position = Vector2(4, 0.5)
+shape = SubResource("RectangleShape2D_lqyn0")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=114136210]
+position = Vector2(3, 14)
+shape = SubResource("RectangleShape2D_lc8yl")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=598560605]
+position = Vector2(3.5, 0.5)
+shape = SubResource("RectangleShape2D_lqyn0")
