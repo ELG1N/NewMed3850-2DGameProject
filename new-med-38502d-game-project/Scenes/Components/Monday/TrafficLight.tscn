@@ -35,7 +35,10 @@ animations = [{
 size = Vector2(23, 81)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqyn0"]
-size = Vector2(43, 12)
+size = Vector2(38, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nygc3"]
+size = Vector2(21, 81)
 
 [node name="ItsLightGuys" type="StaticBody2D" unique_id=868137992]
 
@@ -54,13 +57,9 @@ position = Vector2(12, -6.5)
 shape = SubResource("RectangleShape2D_cofu3")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D" unique_id=576207475]
-position = Vector2(11.5, -42)
+position = Vector2(9, -40.5)
 shape = SubResource("RectangleShape2D_lqyn0")
 
-[node name="CollisionShape2D5" type="CollisionShape2D" parent="." unique_id=1928947963]
-position = Vector2(11.5, -7)
-shape = SubResource("RectangleShape2D_cofu3")
-
-[node name="CollisionShape2D6" type="CollisionShape2D" parent="." unique_id=452128690]
-position = Vector2(11.5, -42)
-shape = SubResource("RectangleShape2D_lqyn0")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1604725997]
+position = Vector2(11.5, -6.5)
+shape = SubResource("RectangleShape2D_nygc3")

@@ -23,8 +23,15 @@ func Die():
 	%AnimatedSprite2D.play("die")
 	%AnimatedSprite2D.stop()
 	await get_tree().create_timer(4.5).timeout
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://Scenes/Components/Monday/flappyloose.tscn")
 
 
 func _on_kill_body_entered(body: Node2D) -> void:
 	Die()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if self.position.x < 1061:
+		Die()
+	elif self.position.x > 1062:
+		get_tree().change_scene_to_file("res://Scenes/Components/Monday/flappywin.tscn")

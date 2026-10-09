@@ -1,3 +1,18 @@
 [gd_scene format=3 uid="uid://clm8e1qtynot6"]
 
 [node name="Main menu" type="Node2D" unique_id=822084577]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1421116533]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=139156749]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Under Construction
+"
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1959513969]
+offset_left = 23.0
+offset_top = 117.0
+offset_right = 107.0
+offset_bottom = 148.0
+text = "Exit game"

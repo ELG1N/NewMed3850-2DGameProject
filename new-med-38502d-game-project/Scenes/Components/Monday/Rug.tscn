@@ -10,6 +10,12 @@ size = Vector2(20, 35)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lqyn0"]
 size = Vector2(57, 39)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nygc3"]
+size = Vector2(19, 37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cofu3"]
+size = Vector2(55, 37)
+
 [node name="RugGuys" type="StaticBody2D" unique_id=1356484975]
 physics_material_override = SubResource("PhysicsMaterial_lqyn0")
 
@@ -30,10 +36,10 @@ shape = SubResource("RectangleShape2D_lc8yl")
 position = Vector2(4, 0.5)
 shape = SubResource("RectangleShape2D_lqyn0")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="." unique_id=114136210]
-position = Vector2(3, 14)
-shape = SubResource("RectangleShape2D_lc8yl")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1811126913]
+position = Vector2(3, 12.5)
+shape = SubResource("RectangleShape2D_nygc3")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="." unique_id=598560605]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=448986935]
 position = Vector2(3.5, 0.5)
-shape = SubResource("RectangleShape2D_lqyn0")
+shape = SubResource("RectangleShape2D_cofu3")

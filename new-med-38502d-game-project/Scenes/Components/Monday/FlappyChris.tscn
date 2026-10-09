@@ -6,10 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bh85qkwl366bq" path="res://Assets/Sprites/Monday/DeadChris.png" id="4_747ac"]
 [ext_resource type="Texture2D" uid="uid://bkpy0crexo32k" path="res://Assets/Sprites/Monday/FlappyChris2.png" id="4_v5nqk"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqyn0"]
-radius = 6.0
-height = 24.0
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_lqyn0"]
 animations = [{
 "frames": [{
@@ -43,20 +39,16 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lqyn0"]
+radius = 5.0
+height = 10.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nygc3"]
+radius = 5.0
+height = 24.0
+
 [node name="FlappyChris" type="CharacterBody2D" unique_id=111654309]
 script = ExtResource("1_20arr")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=295474992]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=789587506]
-position = Vector2(3, -4)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_lqyn0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1931458904]
-position = Vector2(3, -4)
-rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_lqyn0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1752871328]
 unique_name_in_owner = true
@@ -65,3 +57,19 @@ sprite_frames = SubResource("SpriteFrames_lqyn0")
 animation = &"die"
 autoplay = "idle"
 frame_progress = 1.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=295474992]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=789587506]
+position = Vector2(11, -5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_lqyn0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1308897801]
+position = Vector2(2, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_nygc3")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
