@@ -13,6 +13,7 @@ func _physics_process(delta: float) -> void:
 		if is_dead == false:
 			if Input.is_action_just_pressed("Jump"):
 				velocity.y = JUMP_VELOCITY
+				$AudioStreamPlayer2D.play()
 				%AnimatedSprite2D.play("Fly")
 	move_and_slide()
 

@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://32cmfpg14x0w" path="res://Scenes/Components/Monday/Rug.tscn" id="4_y4s5u"]
 [ext_resource type="PackedScene" uid="uid://6jt4tltsy45n" path="res://Scenes/Components/Monday/TrafficLight.tscn" id="5_ovv2c"]
 [ext_resource type="Texture2D" uid="uid://pnndhkbdqpn3" path="res://Assets/Sprites/Monday/1542234092.svg" id="7_y4s5u"]
+[ext_resource type="AudioStream" uid="uid://cl5ejsviwl14p" path="res://Assets/Sounds/Monday/start.wav" id="8_ovv2c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_nygc3"]
 
@@ -100,5 +101,10 @@ z_index = -1
 position = Vector2(373, 106.50001)
 scale = Vector2(0.2836762, 0.14134042)
 texture = ExtResource("7_y4s5u")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=611313096]
+stream = ExtResource("8_ovv2c")
+volume_db = -5.433
+autoplay = true
 
 [connection signal="body_entered" from="kill" to="Player" method="_on_kill_body_entered"]
